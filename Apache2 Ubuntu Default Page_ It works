@@ -1,288 +1,0 @@
-From: <Saved by Blink>
-Snapshot-Content-Location: http://66.228.52.161/ubuntu_default_page.html
-Subject: Apache2 Ubuntu Default Page: It works
-Date: Sun, 12 Mar 2023 23:52:08 -0000
-MIME-Version: 1.0
-Content-Type: multipart/related;
-	type="text/html";
-	boundary="----MultipartBoundary--S77WY1RXUjA9RfPdnOkqUhyUfZqBTsxrVdtq5cdP5E----"
-
-
-------MultipartBoundary--S77WY1RXUjA9RfPdnOkqUhyUfZqBTsxrVdtq5cdP5E----
-Content-Type: text/html
-Content-ID: <frame-E5DD93915A48F3647AD8A30BEC834FEE@mhtml.blink>
-Content-Transfer-Encoding: binary
-Content-Location: http://66.228.52.161/ubuntu_default_page.html
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><!--
-    Modified from the Debian original for Ubuntu
-    Last updated: 2014-03-19
-    See: https://launchpad.net/bugs/1288690
-  --><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="stylesheet" type="text/css" href="cid:css-c7ba0339-1bf7-4e49-98c5-2cf3348f2854@mhtml.blink" />
-    
-    <title>Apache2 Ubuntu Default Page: It works</title>
-    
-  </head>
-  <body>
-    <div class="main_page">
-      <div class="page_header floating_element">
-        <img src="http://66.228.52.161/icons/ubuntu-logo.png" alt="Ubuntu Logo" class="floating_element">
-        <span class="floating_element">
-          Apache2 Ubuntu Default Page
-        </span>
-      </div>
-<!--      <div class="table_of_contents floating_element">
-        <div class="section_header section_header_grey">
-          TABLE OF CONTENTS
-        </div>
-        <div class="table_of_contents_item floating_element">
-          <a href="#about">About</a>
-        </div>
-        <div class="table_of_contents_item floating_element">
-          <a href="#changes">Changes</a>
-        </div>
-        <div class="table_of_contents_item floating_element">
-          <a href="#scope">Scope</a>
-        </div>
-        <div class="table_of_contents_item floating_element">
-          <a href="#files">Config files</a>
-        </div>
-      </div>
--->
-      <div class="content_section floating_element">
-
-
-        <div class="section_header section_header_red">
-          <div id="about"></div>
-          It works!
-        </div>
-        <div class="content_section_text">
-        <nav>
-            <li><a href="http://66.228.52.161/jessenotes.html">Jesse Notes &amp; test </a></li>
-       </nav>
-
-
-          <p>
-                This is the default welcome page used to test the correct
-                operation of the Apache2 server after installation on Ubuntu systems.
-                It is based on the equivalent page on Debian, from which the Ubuntu Apache
-                packaging is derived.
-                If you can read this page, it means that the Apache HTTP server installed at
-                this site is working properly. You should <b>replace this file</b> (located at
-                <tt>/var/www/html/index.html</tt>) before continuing to operate your HTTP server.
-          </p>
-
-
-          <p>
-                If you are a normal user of this web site and don't know what this page is
-                about, this probably means that the site is currently unavailable due to
-                maintenance.
-                If the problem persists, please contact the site's administrator.
-          </p>
-
-        </div>
-        <div class="section_header">
-          <div id="changes"></div>
-                Configuration Overview
-        </div>
-        <div class="content_section_text">
-          <p>
-                Ubuntu's Apache2 default configuration is different from the
-                upstream default configuration, and split into several files optimized for
-                interaction with Ubuntu tools. The configuration system is
-                <b>fully documented in
-                /usr/share/doc/apache2/README.Debian.gz</b>. Refer to this for the full
-                documentation. Documentation for the web server itself can be
-                found by accessing the <a href="http://66.228.52.161/manual">manual</a> if the <tt>apache2-doc</tt>
-                package was installed on this server.
-
-          </p>
-          <p>
-                The configuration layout for an Apache2 web server installation on Ubuntu systems is as follows:
-          </p>
-          <p></p>
-          <pre>/etc/apache2/
-|-- apache2.conf
-|       `--  ports.conf
-|-- mods-enabled
-|       |-- *.load
-|       `-- *.conf
-|-- conf-enabled
-|       `-- *.conf
-|-- sites-enabled
-|       `-- *.conf
-          </pre>
-          <ul>
-                        <li>
-                           <tt>apache2.conf</tt> is the main configuration
-                           file. It puts the pieces together by including all remaining configuration
-                           files when starting up the web server.
-                        </li>
-
-                        <li>
-                           <tt>ports.conf</tt> is always included from the
-                           main configuration file. It is used to determine the listening ports for
-                           incoming connections, and this file can be customized anytime.
-                        </li>
-
-                        <li>
-                           Configuration files in the <tt>mods-enabled/</tt>,
-                           <tt>conf-enabled/</tt> and <tt>sites-enabled/</tt> directories contain
-                           particular configuration snippets which manage modules, global configuration
-                           fragments, or virtual host configurations, respectively.
-                        </li>
-
-                        <li>
-                           They are activated by symlinking available
-                           configuration files from their respective
-                           *-available/ counterparts. These should be managed
-                           by using our helpers
-                           <tt>
-                                <a href="http://manpages.debian.org/cgi-bin/man.cgi?query=a2enmod">a2enmod</a>,
-                                <a href="http://manpages.debian.org/cgi-bin/man.cgi?query=a2dismod">a2dismod</a>,
-                           </tt>
-                           <tt>
-                                <a href="http://manpages.debian.org/cgi-bin/man.cgi?query=a2ensite">a2ensite</a>,
-                                <a href="http://manpages.debian.org/cgi-bin/man.cgi?query=a2dissite">a2dissite</a>,
-                            </tt>
-                                and
-                           <tt>
-                                <a href="http://manpages.debian.org/cgi-bin/man.cgi?query=a2enconf">a2enconf</a>,
-                                <a href="http://manpages.debian.org/cgi-bin/man.cgi?query=a2disconf">a2disconf</a>
-                           </tt>. See their respective man pages for detailed information.
-                        </li>
-
-                        <li>
-                           The binary is called apache2. Due to the use of
-                           environment variables, in the default configuration, apache2 needs to be
-                           started/stopped with <tt>/etc/init.d/apache2</tt> or <tt>apache2ctl</tt>.
-                           <b>Calling <tt>/usr/bin/apache2</tt> directly will not work</b> with the
-                           default configuration.
-                        </li>
-          </ul>
-        </div>
-
-        <div class="section_header">
-            <div id="docroot"></div>
-                Document Roots
-        </div>
-
-        <div class="content_section_text">
- <p>
-                By default, Ubuntu does not allow access through the web browser to
-                <em>any</em> file apart of those located in <tt>/var/www</tt>,
-                <a href="http://httpd.apache.org/docs/2.4/mod/mod_userdir.html">public_html</a>
-                directories (when enabled) and <tt>/usr/share</tt> (for web
-                applications). If your site is using a web document root
-                located elsewhere (such as in <tt>/srv</tt>) you may need to whitelist your
-                document root directory in <tt>/etc/apache2/apache2.conf</tt>.
-            </p>
-            <p>
-                The default Ubuntu document root is <tt>/var/www/html</tt>. You
-                can make your own virtual hosts under /var/www. This is different
-                to previous releases which provides better security out of the box.
-            </p>
-        </div>
-
-        <div class="section_header">
-          <div id="bugs"></div>
-                Reporting Problems
-        </div>
-        <div class="content_section_text">
-          <p>
-                Please use the <tt>ubuntu-bug</tt> tool to report bugs in the
-                Apache2 package with Ubuntu. However, check <a href="https://bugs.launchpad.net/ubuntu/+source/apache2">existing
-                bug reports</a> before reporting a new bug.
-          </p>
-          <p>
-                Please report bugs specific to modules (such as PHP and others)
-                to respective packages, not to the web server itself.
-          </p>
-        </div>
-
-
-
-
-      </div>
-    </div>
-    <div class="validator">
-    </div>
-  
-
-
-</body></html>
-------MultipartBoundary--S77WY1RXUjA9RfPdnOkqUhyUfZqBTsxrVdtq5cdP5E----
-Content-Type: text/css
-Content-Transfer-Encoding: binary
-Content-Location: cid:css-c7ba0339-1bf7-4e49-98c5-2cf3348f2854@mhtml.blink
-
-@charset "utf-8";
-
-* { margin: 0px; padding: 0px; }
-
-body, html { padding: 3px; background-color: rgb(216, 219, 226); font-family: Verdana, sans-serif; font-size: 11pt; text-align: center; }
-
-div.main_page { position: relative; display: table; width: 800px; margin-bottom: 3px; margin-left: auto; margin-right: auto; padding: 0px; border-width: 2px; border-color: rgb(33, 39, 56); border-style: solid; background-color: rgb(255, 255, 255); text-align: center; }
-
-div.page_header { height: 99px; width: 100%; background-color: rgb(245, 246, 247); }
-
-div.page_header span { margin: 15px 0px 0px 50px; font-size: 180%; font-weight: bold; }
-
-div.page_header img { margin: 3px 0px 0px 40px; }
-
-div.table_of_contents { clear: left; min-width: 200px; margin: 3px; background-color: rgb(255, 255, 255); text-align: left; }
-
-div.table_of_contents_item { clear: left; width: 100%; margin: 4px 0px 0px; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); text-align: left; }
-
-div.table_of_contents_item a { margin: 6px 0px 0px 6px; }
-
-div.content_section { margin: 3px; background-color: rgb(255, 255, 255); text-align: left; }
-
-div.content_section_text { padding: 4px 8px; color: rgb(0, 0, 0); font-size: 100%; }
-
-div.content_section_text pre { margin: 8px 0px; padding: 8px; border-width: 1px; border-style: dotted; border-color: rgb(0, 0, 0); background-color: rgb(245, 246, 247); font-style: italic; }
-
-div.content_section_text p { margin-bottom: 6px; }
-
-div.content_section_text ul, div.content_section_text li { padding: 4px 8px 4px 16px; }
-
-div.section_header { padding: 3px 6px; background-color: rgb(142, 156, 178); color: rgb(255, 255, 255); font-weight: bold; font-size: 112%; text-align: center; }
-
-div.section_header_red { background-color: rgb(205, 33, 79); }
-
-div.section_header_grey { background-color: rgb(159, 147, 134); }
-
-.floating_element { position: relative; float: left; }
-
-div.table_of_contents_item a, div.content_section_text a { text-decoration: none; font-weight: bold; }
-
-div.table_of_contents_item a:link, div.table_of_contents_item a:visited, div.table_of_contents_item a:active { color: rgb(0, 0, 0); }
-
-div.table_of_contents_item a:hover { background-color: rgb(0, 0, 0); color: rgb(255, 255, 255); }
-
-div.content_section_text a:link, div.content_section_text a:visited, div.content_section_text a:active { background-color: rgb(220, 223, 230); color: rgb(0, 0, 0); }
-
-div.content_section_text a:hover { background-color: rgb(0, 0, 0); color: rgb(220, 223, 230); }
-
-div.validator { }
-------MultipartBoundary--S77WY1RXUjA9RfPdnOkqUhyUfZqBTsxrVdtq5cdP5E----
-Content-Type: image/png
-Content-Transfer-Encoding: binary
-Content-Location: http://66.228.52.161/icons/ubuntu-logo.png
-
-âPNG
-
-   IHDR   w   c   °~ü  —IDATxÏ]t„HÃ1£ZÀÃÃÃµ≤ÃÃÃÃÃÃÃÃÃ<ÃÃµÏ03ì˛©tO.#ŸVGÁ,’{µ;`˜ƒ]n™ˇ+èàréãVV7∏rö¡’õÖ∆ûµ˘ô‡l≤Õbõ]6´mŒ69˚NË ´ÜÆ‹cj EÇ+;ÊR?‰ÃâÂ+õÿ‚‹–/¢eì$YbËÍS∂‡˚ç‹'Ô∑ë∏Y¢8‡_ˇ∞≈∏›Ê"ì÷ô\}ΩP˚˜Êë∏+àÛè…˚Ω‡Ï
-ì´µ2¢I∞”w°˛Ô5"q3≈ºº_	çù(∏CßgÅBgƒˇÁ?#qd°æ“˙Ç≥©6i∞Œ‡Ï¯H‹ hhl_t®MNƒ.≥I$Æ$W.úıÿ§·Hì≥œÁÔ£˛5◊q:{.[¢ïú∑ï]s(≈éﬁ ıÎuun<Âu#q”›8qıìlàZzÈÅ‘%Ê“RX=›‘¸›õdºZ
-ÅY•}4[+7Ö∆Ó»Ü∞EßoGΩMu‰Ü÷—üßnCc3ÀYÌœë∏4uıh)á) 6~˙y¬≤®‰¸=”iÁ√H\7aµï∂úµfkù≈tú’]îV;¥#qpÒ!´1¡Y<H±bGÆKU˜üKıoﬁÁ¨õmSvlü>íöæyùÍ^æù*Ô:ùäN›∆y}«Ç)îU]òÓømôúâ€œ¿v∆+S˘M«PÀ»O»ÍÍ†t QÒﬁ∫WÔÚûï{{(~ÏFÈüÅ9++9fç?Ö^\Q¿6
-Í,[t ÷∂®ù‰XOcG¨Mù∆rCÌÛ7I¸< ë∏∫ÚÒê¶ﬂ£÷£Üü$°Ø‰¸æ·É«…/:ÊN¥≈]S9¶lg◊lıtQó9ü™8_ˆgk\∏ˇﬂî–ä+Pvä∞≈ÁÏJ›%Ö‘<qeb≠Ìm¨%øË\2ì‚«mº‘òjÌ4¥‚
-ççñ6.⁄ó˙⁄ö‚`¥≈éŸ–˘ªögÆ#`JoõÙU?~9U?z	fÅƒóFí]1æ :°i-“kÎI[ROm9F”WØ8o¥
-uóŒkøxâ™Ó;á Æ‘£¢¸∫#®ˆ•[©eƒ«‘]ºÑ»ÍK°∏Eï˜ú9Å	°∏ÍΩRf˝°kxn|®ØóJ.‹Ø√Ó6≠ÈµÙ‚˝0%ß—∞&e≈5B'Æ°±2ùUˇŒC…FÃ©#TÌs7P_{y°+æ3Çî¿H’	ç∏&gKm†NﬂﬁÛ®ìøÍÅÛÜvî:y+Í©*!/‘<{Ω\hPSoç∏BWÆìÈ§÷±_ë‡F∫ú„ã‚>Î7◊„Ë%”Ó‰–àkpu¢ﬂäøâ≥¶∫°e‘ßÅ˙Ãµ/ﬁ‚Ì1?~ÖLõV\c´Êæ∏Nºñu˚Óp{J ∑#P†lõÙΩá·1Anj÷Ÿ!9/ÆëøÚJ2ù”>{π°Ò≥2%*øˆ0ØM["ÿ‡ágÁÂ∏∏â–y±ÚéS©u‹W‘[‡  Æ>ƒ˘Ûäõès=ìñ\∞WfÚ£^’1I‹ÄsØƒ»Ω3˜GÆ¶r_sÀJ˜ıo=@—]œhå_27 åËª=My%Á≈∫z¶€áás‰ò¯≈gÔ‚D}±ŸLä“òQd2%øÀ˝iYWorµü=OIêΩΩµ‘·3*.¬Äp¶‡c#,X|ŒnT|÷N?a3ô‡ú‹πözø€áGZ2 ¨á◊u.ö6¯œ˛_œyqQƒÂˆ·±é•HsÅ˝üWnzî FkÛÔP”∑o8Aâ∆œ_§∆OûEƒHbÕeìr^\‘Ÿ∏}xLu^©•›•ÇÃ√÷§“KpKë…Îﬂyò‹–Ùı´Ì©ü‰º∏1ùÌÌ’eW,ÁÌ‚HÑµGìéyìh ˙ZS'åÀ”3ZÑ Éﬂ∂P‘ù˚”ÚÅÍÜ©61∑ù‰XÄÂ7CÊ!éxŒ¥ËÜ ªOœà∞∞;qsC˘çGÀl®ÆœyqQ8%”Ÿ-#>"7¥M˛1#‚b]uåƒî%"C )·à
-i¨¡oÁT‹|,π¬Í≥]¨ÉÂÖÙZˇÎ´…ÿ`…¥âÂ($Q!ˆÅﬂŒ¡Nπ∑°Ü‹–SYåÏ≈`ƒ’W¢ˆYc…ú%⁄m)‘7¯C8F.g'HÖ‚^∫çº ´õ.yaSgztÃü,ŸÆÚQH‚πâõh∫dÃ¸Ó‚≈‰Öˆ£§G0fÜ∫WÓNò≥,È<*ì+'á+áä+ﬂKÖ‚n8äí5@~€ƒ˘9U!XÛèÔ…Œ=%⁄ﬂˇ*qÖ∆ŒzÍÏ©)#Ûµú◊T=xU‹zÇÁTç◊!•Æ2<í°≥pv¢]	é]ˆc¨@]Ep÷)+0¨«A@~2˛¡ÙD"]_KÉ=¬»k¯	j˝™íÊ+[ùÌx‚?iYa	_‚PV a[∂”`n¥N¯vŸfgŒ¯e¬ˇÚ!… giåv¥ç]s—©€EX–ƒ•h°k
-¶‰è-*’ø˝ ≤aÚ'íÃ±˘Ò$ºps“˚Íp»êMâPüº∞†∆Nuïlπ°_äœ⁄yYÆ’¨1‰uØﬂç˜¢∂~ıÚ;£÷ó	Œœ@2`®≈Eë≤‡¨4ê˙‹”∂u÷H?¿˙ä\då|Ø|Âˆô£˝ãõˇÔ£ zœ‘yá	);Õ?ºÎ¯¿…ÄÚƒgÒ>Ü%Åø)ZWåÆM¯ﬂÕ’ªÚ¢zØ…Ò6•“ÀÚÌË—T˚¸ç(9¡µ∏É¬{≥(jûº*Ì+%†G‚∆ˆYÁèÇ≥)¡â+üÌ|9“ªŸµÄÌ›f„¬‚ŸjÇ≥Ú,àõ¥`gÂ4mÕ¢{®í&≠+;a¨hq·-#6ÏñV[uÔŸÈ›‚]òöB[È®lÛeöùã¶£2¶÷ÁtJ4ﬂ¿±'◊«e(Ÿò¢%Æ»ø.∫íWÚ12ôø!]öÕï{ë∏.&«{√Ïm!{B$ÆMùùÉ{ç≥,lÆ2îèœF‚&œú‘ÿYπ›Ucü·.èË—3& É≥ógΩôıøW<®{Dç ¬#iMπVpe<vÆ¡â™ƒÑÆ<|:j$ÆÕ˝WZŸ‰ÍY∂8_⁄l˜)®es∫–Ÿ≠®¸è‘8ÃüÜª7bÍ6Bc:;∑≠~Oı2∏z)Æ‹/¸Oªˆ %9Ña¯∑mk€∂m€∂m€∂m€∂m€Ô:[≠õíÈΩuŒ≥òT˜õvß˙*ˆÅ4_¸æ.ÍÔ:Ú:t∏öWá´Èp5.ıB˚…ÇÈp©w±É¸g—t∏‡!†√’·j:‹êÜ˙âPﬂËp˝’X¨C(Æü†ZÈp˝ç◊:ÆWáK˝aù¬¿õbÊ[’p©/ê•—	ıë
-ﬂò8·ﬂ«˛ﬁ˙˘∫G}äXHèÇ®å¶håúãw-Üõxõò˝VlS·xﬂΩ2#>…¬≠rîBœ<Ù¡<Ù`/í+ˇñafV ùÔ;äùxÄá>‹¡X|°Æ¢Kbvîÿ˛Å¬µN3¡Æ∫˚hÑ∑‘√µı|"¶˜•€ÿà8Ó°gú¬ΩÑòÉ)Xã+≤7çb∏∑qÀÉS!9‹•àèwDÔOËŸüÃ∆p«{Ÿ_
-ú˝ç˚	UH
-wÇ¬~käôux”ûpEè@˝ã{Ü˛≥¯Ëuwê‚≠sYÆ@MïœÑu∏^Pƒ\OáõKÃ–·zA}$ÊÊ88‹∏b¶∂◊ÍºanøÉ√˝_Ãt”·˙@m1Ã›≈;˜[yçNw≤¬]+f?ÚÓl√˝"ò√˝–J∏wˇY‚∞ªÂ#n∂_5l_„«·≥øX	˜∞·?ªÏó˙B·	’n√ˆC∑πË	c"‹÷b6∫ïpó˛s—ÊpSàπŒnzÊ∂ﬂpx∏UDO|·ñ≥¨Ñ;R¸ ¶·Robùò+Ê¶o†ËIË‡pÛâû¨&¬Õ(fª[	∑ö¯¡Põ¬-&fˆ‚7}ÂEﬂXáõRÙt1ÓÔ‚-ŒÀ¯ÿl∏ü·¢·˜P=∏¬•ﬁEK‹3…=Ù,ût›G]ºÈ¿p¿mCœ5¸·aüÀk†FàcÃƒ◊ ·>˚aS<ñ£r#
-°&˙YX¨hÖb»ä(énÿÅá¬ïØå
-´–yëQ}m◊€√»e4Cn‰GSå«uD≥·@ÃC/îFz‰Fy¥≈1w·~)ûXô1“€bY–ü˘Xÿ/±Tuü6áwœ≠≤õ˘Ü"`eÚ´&m-Ïd∏õzﬂ¬	AJèIÔ†•Ö„æp*6õ<7˘ÿ}∆Ù∑Z<úHu∆z\¬Qlƒ\åD[‰EhºÂÂ‚S¢∆c1∂·$n„ &£rä[´2*&™a÷·éaÊa⁄#¬∏;_Í¥2»≠ÚKÃdW∏∑©ãaXãÛÿçËåîx€À¸è(ÜNòáS8ÉXäâËçÚàãèUVÖjPΩ}7    IENDÆB`Ç
-------MultipartBoundary--S77WY1RXUjA9RfPdnOkqUhyUfZqBTsxrVdtq5cdP5E------
